@@ -1,7 +1,7 @@
 const form = document.getElementById("login-form");
 const mensagemErro = document.getElementById("mensagem-erro");
 
-const API_BASE_URL = "http://127.0.0.1:5000";
+const API_BASE_URL = "https://wayne-security-backend.onrender.com";
 
 function mostrarErroLogin(mensagem) {
   mensagemErro.textContent = mensagem;
