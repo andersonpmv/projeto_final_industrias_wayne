@@ -88,6 +88,12 @@ Email: funcionario@wayne.com
 Senha: 123456
 ```
 
+## Banco de Dados
+
+O projeto utiliza SQLite no ambiente atual para fins de demonstração e estudo.
+
+Em ambiente de produção, o recomendado é migrar para PostgreSQL, garantindo persistência real dos dados, maior segurança e melhor escalabilidade.
+
 ---
 
 # Dashboard
