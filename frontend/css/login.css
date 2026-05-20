@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #f8fafc;
+  min-height: 100vh;
+
+  background-color: #020617;
+
+  background-image:
+    linear-gradient(
+      rgba(2, 6, 23, 0.58),
+      rgba(2, 6, 23, 0.82)
+    ),
+    url("../assets/img/01_main_gotham.png");
+
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  overflow: hidden;
+}
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 32px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 390px;
+
+  padding: 38px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(2, 6, 23, 0.96)
+    );
+
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 30px rgba(59, 130, 246, 0.28),
+    0 0 55px rgba(34, 197, 94, 0.12),
+    0 18px 45px rgba(0, 0, 0, 0.75);
+
+  backdrop-filter: blur(10px);
+}
+
+.login-box h1 {
+  margin-bottom: 10px;
+
+  text-align: center;
+  color: #22c55e;
+
+  font-size: 2.1rem;
+
+  text-shadow:
+    0 0 10px rgba(34, 197, 94, 0.45),
+    0 0 22px rgba(59, 130, 246, 0.18);
+}
+
+.login-box p {
+  margin-bottom: 28px;
+
+  text-align: center;
+  color: #cbd5e1;
+
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: bold;
+  color: #f8fafc;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 8px;
+
+  background-color: rgba(2, 6, 23, 0.9);
+  color: #f8fafc;
+
+  transition: 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus {
+  outline: none;
+
+  border-color: #22c55e;
+
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.35),
+    0 0 20px rgba(59, 130, 246, 0.18);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #020617;
+
+  border: none;
+  border-radius: 8px;
+
+  font-weight: bold;
+  font-size: 1rem;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 16px rgba(50, 34, 197, 0.48),
+    0 0 28px rgba(59, 130, 246, 0.18);
+}
+
+.erro {
+  color: #f87171;
+
+  margin-top: 15px;
+
+  text-align: center;
+
+  min-height: 20px;
+
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .login-container {
+    padding: 24px;
+  }
+
+  .login-box {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image:
+      linear-gradient(
+        rgba(2, 6, 23, 0.72),
+        rgba(2, 6, 23, 0.94)
+      ),
+      url("../assets/img/01_main_gotham.png");
+
+    background-size: cover;
+    background-position: center center;
+
+    overflow-y: auto;
+  }
+
+  .login-container {
+    align-items: center;
+    padding: 20px;
+  }
+
+  .login-box {
+    max-width: 100%;
+    padding: 28px;
+  }
+
+  .login-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .login-box p {
+    font-size: 0.9rem;
+  }
+
+  .form-group input {
+    padding: 11px;
+  }
+
+  button {
+    padding: 11px;
+  }
+}

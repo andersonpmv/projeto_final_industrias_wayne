@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wayne Security Dashboard</title>
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container hidden" id="dashboard-container">
+    <header class="header">
+      <div>
+        <h1>Wayne Security Dashboard</h1>
+        <p class="subtitle">Painel de segurança, acessos e recursos internos</p>
+      </div>
+
+      <div class="header-actions">
+        <button id="admin-btn">Painel Administrativo</button>
+        <button id="logout-btn">Sair</button>
+      </div>
+    </header>
+
+    <div id="erro-box" class="erro-box"></div>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Total de Logs</h3>
+        <p id="total-logs">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Acessos Permitidos</h3>
+        <p id="total-permitidos">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Acessos Negados</h3>
+        <p id="total-negados">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Área Mais Acessada</h3>
+        <p id="area-mais-acessada">-</p>
+      </div>
+
+      <div class="card">
+        <h3>Total de Usuários</h3>
+        <p id="total-usuarios">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Usuários Ativos</h3>
+        <p id="usuarios-ativos">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Usuários Bloqueados</h3>
+        <p id="usuarios-bloqueados">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Total de Recursos</h3>
+        <p id="total-recursos">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Total de Áreas</h3>
+        <p id="total-areas">0</p>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2>Acessos por Área</h2>
+      <canvas id="areasChart"></canvas>
+    </section>
+
+    <section class="alerts-section">
+      <div class="alert-box">
+        <h2>Usuários Suspeitos</h2>
+        <ul id="usuarios-suspeitos"></ul>
+      </div>
+
+      <div class="alert-box">
+        <h2>Áreas Sensíveis</h2>
+        <ul id="areas-sensiveis"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>

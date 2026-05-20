@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Painel Administrativo | Wayne Security</title>
+
+  <link rel="stylesheet" href="./css/admin.css">
+</head>
+
+<body>
+
+  <div class="admin-container">
+
+    <header class="admin-header">
+
+      <h1>Painel Administrativo</h1>
+
+      <div class="header-buttons">
+        <button id="btn-dashboard">
+          Voltar ao Dashboard
+        </button>
+
+        <button id="btn-logout">
+          Sair
+        </button>
+      </div>
+
+    </header>
+
+    <nav class="admin-nav">
+
+      <button
+        class="tab-button active"
+        data-target="recursos-section"
+      >
+        Recursos
+      </button>
+
+      <button
+        class="tab-button"
+        data-target="usuarios-section"
+      >
+        Usuários
+      </button>
+
+      <button
+        class="tab-button"
+        data-target="credenciais-section"
+      >
+        Credenciais
+      </button>
+
+    </nav>
+
+    <main class="admin-content">
+
+      <!-- RECURSOS -->
+
+      <section
+        id="recursos-section"
+        class="content-section active-section"
+      >
+
+        <h2>Gestão de Recursos</h2>
+
+        <p>
+          Área destinada ao cadastro, edição e exclusão de recursos internos.
+        </p>
+
+        <div class="action-box">
+          <button id="btn-novo-recurso">
+            Novo Recurso
+          </button>
+        </div>
+
+        <!-- FORMULÁRIO RECURSO -->
+
+        <div id="form-recurso-box" class="form-box hidden">
+
+          <h3>Cadastrar Recurso</h3>
+
+          <div class="form-group">
+
+            <label for="recurso-nome">
+              Nome
+            </label>
+
+            <input
+              type="text"
+              id="recurso-nome"
+              placeholder="Digite o nome do recurso"
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="recurso-categoria">
+              Categoria
+            </label>
+
+            <select id="recurso-categoria">
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="equipamento">
+                Equipamento
+              </option>
+
+              <option value="veiculo">
+                Veículo
+              </option>
+
+              <option value="dispositivo_seguranca">
+                Dispositivo de Segurança
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="recurso-status">
+              Status
+            </label>
+
+            <select id="recurso-status">
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="ativo">
+                Ativo
+              </option>
+
+              <option value="manutencao">
+                Manutenção
+              </option>
+
+              <option value="inativo">
+                Inativo
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="recurso-localizacao">
+              Localização
+            </label>
+
+            <input
+              type="text"
+              id="recurso-localizacao"
+              placeholder="Digite a localização"
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="recurso-descricao">
+              Descrição
+            </label>
+
+            <textarea
+              id="recurso-descricao"
+              placeholder="Digite a descrição do recurso"
+            ></textarea>
+
+          </div>
+
+          <div class="form-buttons">
+
+            <button id="btn-salvar-recurso">
+              Salvar Recurso
+            </button>
+
+            <button
+              id="btn-cancelar-recurso"
+              class="btn-secondary"
+            >
+              Cancelar
+            </button>
+
+          </div>
+
+          <p
+            id="mensagem-recurso"
+            class="mensagem-box"
+          ></p>
+
+        </div>
+
+        <!-- LISTA RECURSOS -->
+
+        <div class="list-box">
+
+          <h3>Lista de Recursos</h3>
+
+          <div id="lista-recursos">
+            <p>Carregando recursos...</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- USUÁRIOS -->
+
+      <section
+        id="usuarios-section"
+        class="content-section"
+      >
+
+        <h2>Gestão de Usuários</h2>
+
+        <p>
+          Área destinada ao cadastro e remoção de funcionários e gerentes.
+        </p>
+
+        <div class="action-box">
+
+          <button id="btn-novo-usuario">
+            Novo Usuário
+          </button>
+
+        </div>
+
+        <!-- FORMULÁRIO USUÁRIO -->
+
+        <div id="form-usuario-box" class="form-box hidden">
+
+          <h3>Cadastrar Usuário</h3>
+
+          <div class="form-group">
+
+            <label for="usuario-nome">
+              Nome
+            </label>
+
+            <input
+              type="text"
+              id="usuario-nome"
+              placeholder="Digite o nome"
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="usuario-email">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="usuario-email"
+              placeholder="Digite o email"
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="usuario-senha">
+              Senha
+            </label>
+
+            <input
+              type="password"
+              id="usuario-senha"
+              placeholder="Digite a senha"
+            >
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="usuario-cargo">
+              Cargo
+            </label>
+
+            <select id="usuario-cargo">
+
+              <option value="">
+                Selecione
+              </option>
+
+              <option value="funcionario">
+                Funcionário
+              </option>
+
+              <option value="gerente">
+                Gerente
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="form-buttons">
+
+            <button id="btn-salvar-usuario">
+              Salvar Usuário
+            </button>
+
+            <button
+              id="btn-cancelar-usuario"
+              class="btn-secondary"
+            >
+              Cancelar
+            </button>
+
+          </div>
+
+          <p
+            id="mensagem-usuario"
+            class="mensagem-box"
+          ></p>
+
+        </div>
+
+        <!-- LISTA USUÁRIOS -->
+
+        <div class="list-box">
+
+          <h3>Lista de Usuários</h3>
+
+          <div id="lista-usuarios">
+            <p>Nenhum usuário carregado ainda.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CREDENCIAIS -->
+
+      <section
+        id="credenciais-section"
+        class="content-section"
+      >
+
+        <h2>Gestão de Credenciais</h2>
+
+        <p>
+          Área destinada ao controle de ativação e revogação de acesso ao sistema.
+        </p>
+
+        <div class="list-box">
+
+          <h3>Controle de Credenciais</h3>
+
+          <div id="lista-credenciais">
+            <p>Nenhuma credencial carregada ainda.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="./js/admin.js"></script>
+
+</body>
+</html>
